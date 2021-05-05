@@ -14,11 +14,11 @@ Start:
 ; Meaning the entire RAM and also the entire TIA registers
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	lda #0			; A = 0
-	ldx #$FF		; X = #$FF
+	ldx #$FF			; X = #$FF
 
 MemLoop:
-	sta $0,X		; Store the value of A inside memory adress $0 + X
 	dex				; X--
+	sta $0,X		; Store the value of A inside memory adress $0 + X
 	bne MemLoop		; Loop untix X is equal to zero (z-flag is set)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
